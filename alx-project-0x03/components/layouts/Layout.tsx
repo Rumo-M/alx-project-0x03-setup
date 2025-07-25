@@ -1,6 +1,2 @@
-// interface/index.ts (continued)
-import { ReactNode } from "react";
+import { LayoutProps } from "../../interface";
 
-export interface LayoutProps {
-  children: ReactNode;
-}
