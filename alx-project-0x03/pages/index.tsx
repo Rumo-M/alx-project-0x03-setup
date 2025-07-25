@@ -1,35 +1,23 @@
-import Button from "@/components/common/Button";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
-interface PageRouteProps {
-  pageRoute: string
-}
+const Home = () => {
+  const router = useRouter();
 
-export default function Home() {
-  const router = useRouter()
-
-  // Imeperative routing with useRouter
-  const routeToNextPage  = ({ pageRoute }: PageRouteProps) => {
-    router.push(pageRoute, undefined, { shallow: false})
-  }
+  const handleNavigate = () => {
+    router.push('/about');
+  };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center text-center">
-      {/* Welcome Message */}
-      <h1 className="text-4xl font-bold text-gray-800 mb-4">
-        Welcome to Splash App!
-      </h1>
-      <p className="text-lg text-gray-600 mb-8">
-        Your one-stop platform for everything AI you need. Start exploring by
-        navigating to our features below.
-      </p>
-
-      {/* Navigation Options */}
-      <div className="flex gap-6">
-        <Button action={() => routeToNextPage({ pageRoute: '/generate-text-ai' })} buttonLabel="Generate Text" buttonBackgroundColor="blue" />
-        <Button action={() => routeToNextPage({ pageRoute: '/text-to-image'})} buttonLabel="Text to Image" buttonBackgroundColor="green" />
-        <Button action={() => routeToNextPage({ pageRoute: '/counter-app'})} buttonLabel="Contact us" buttonBackgroundColor="orange" />
-      </div>
+    <div className="p-8">
+      <h1 className="text-2xl font-bold mb-4">Welcome to Splash App</h1>
+      <button
+        onClick={handleNavigate}
+        className="px-4 py-2 bg-blue-600 text-white rounded"
+      >
+        Go to About Page
+      </button>
     </div>
   );
-}
+};
+
+export default Home;
