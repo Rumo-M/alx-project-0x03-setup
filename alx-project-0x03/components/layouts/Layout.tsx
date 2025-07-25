@@ -1,19 +1,6 @@
-import React, { ReactNode } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+// interface/index.ts (continued)
+import { ReactNode } from "react";
 
-interface LayoutProps {
+export interface LayoutProps {
   children: ReactNode;
 }
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return (
-    <>
-      <Header />
-      <main className="min-h-screen container mx-auto p-4">{children}</main>
-      <Footer />
-    </>
-  );
-};
-
-export default Layout;
